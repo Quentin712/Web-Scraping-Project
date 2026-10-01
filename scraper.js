@@ -22,19 +22,6 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   year: 'numeric'
 });
 
-const useColor = !process.env.NO_COLOR && (process.stdout.isTTY || process.env.FORCE_COLOR);
-
-const colors = {
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  gray: '\x1b[90m',
-  reset: '\x1b[0m'
-};
-
-function paint(color, text) {
-  return useColor ? color + text + colors.reset : text;
-}
-
 const items = $('li.assignment');
 
 if (items.length === 0) {
@@ -50,19 +37,16 @@ items.each(function () {
 
   let dueText = 'No due date';
   let status = 'Active';
-  let color = colors.gray;
 
   if (dueAttr) {
     const dueDate = new Date(dueAttr);
     dueText = dateFormatter.format(dueDate);
-    const isPast = dueDate < new Date();
-    status = isPast ? 'Past due' : 'Active';
-    color = isPast ? colors.red : colors.green;
+    status = dueDate < new Date() ? 'Past due' : 'Active';
   }
 
-  console.log(paint(color, 'Name: ' + name));
-  console.log(paint(color, 'Due date: ' + dueText));
-  console.log(paint(color, 'Status: ' + status));
-  console.log(paint(color, 'Link: ' + link));
+  console.log('Name: ' + name);
+  console.log('Due date: ' + dueText);
+  console.log('Status: ' + status);
+  console.log('Link: ' + link);
   console.log('');
 });
