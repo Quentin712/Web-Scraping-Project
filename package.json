@@ -1,0 +1,14 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "Reads a saved Canvas page with JSDOM and jQuery and prints the assignments in the terminal",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^4.0.0",
+    "jsdom": "^30.1.1"
+  }
+}
