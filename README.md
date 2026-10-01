@@ -77,18 +77,6 @@ The status only compares the due date to today. It does not check whether you al
 
 If an assignment has no link, the script prints `No link available`.
 
-## Colors
-
-Each assignment is printed in one of three colors:
-
-| Color | Meaning |
-| --- | --- |
-| Red | Has a due date and it has passed (Past due) |
-| Green | Has a due date that has not passed yet (Active) |
-| Gray | No due date |
-
-The colors come from special codes written inside the text, not from CSS. They only show when you run the script directly in a terminal. If you send the output to a file, the codes are left out so the text stays clean. To turn them off yourself, run `NO_COLOR=1 node scraper.js`.
-
 ## Files
 
 | File | What it is | Edit it? |
