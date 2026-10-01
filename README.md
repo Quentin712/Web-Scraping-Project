@@ -47,6 +47,7 @@ Do this again whenever you want fresh results. The script only knows what was on
 ## Run it
 
 ```
+npm install jsdom jquery
 node scraper.js
 ```
 
